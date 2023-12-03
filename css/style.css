@@ -229,4 +229,138 @@ footer {
         border-radius: 8px;
     }
 }
+
+
+/* About Page */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+.heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 15px;
+}
+
+.about-section {
+    background: #fff;
+    color:#000;
+    padding: 50px;
+    text-align: center;
+}
+
+.team-heading {
+    text-align: center;
+    color: #E75480;
+    margin-top: 40px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.column {
+    flex: 0 0 30%;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.container {
+    background: #fff;
+    padding: 0 15px;
+}
+
+.link {
+    margin-top: 90px;
+    margin-left: 40px;
+}
+
+.link a {
+    text-decoration: none;
+    color: #E75480;
+}
+
+footer {
+    background: transparent;
+    color: #E75480;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive to phone */
+@media only screen and (max-width: 600px) {
+    .heading {
+        flex-direction: column;
+        align-items: center;
+    }
   
+    .logo {
+        margin-bottom: 10px;
+    }
+  
+    nav {
+        margin-top: 10px;
+    }
+  
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    nav li {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+  
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .column {
+        margin: 10px 0;
+    }
+}
+
+/* Responsive to tablet */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .column {
+        flex: 1 1 1; 
+    }
+  }
