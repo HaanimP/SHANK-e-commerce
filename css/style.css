@@ -366,6 +366,46 @@ footer {
   }
 
   /* Product Page */
+  .main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.div {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+}
+
+.h2, .p, .p + .p {
+    color:#000;
+    margin: 10px 0;
+}
+
+.p + .p {
+    font-weight: bold;
+    color: #E75480; 
+}
+
+.cart {
+    background-color: #E75480;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+
 
   /* Checkout Page */
 
@@ -462,4 +502,15 @@ tr:hover {
     button {
         padding: 8px 14px;
     }
+}
+
+.input {
+    color:#000;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+#searchBar {
+    color:#000;
+    background: #E75480;
 }
