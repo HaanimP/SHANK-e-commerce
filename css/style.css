@@ -9,7 +9,7 @@ html {
 }
 
 /* Landing/Index Page */
-body, h1, h2, h3, p, ul, li {
+#body, #h1, #p, #ul, #li {
     background: #fff;
     margin: 0;
     padding: 0;
@@ -229,4 +229,426 @@ footer {
         border-radius: 8px;
     }
 }
+
+
+/* About Page */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+.heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 15px;
+}
+
+.about-section {
+    background: #fff;
+    color:#000;
+    padding: 50px;
+    text-align: center;
+}
+
+.team-heading {
+    text-align: center;
+    color: #E75480;
+    margin-top: 40px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.column {
+    flex: 0 0 30%;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.container {
+    background: #fff;
+    padding: 0 15px;
+}
+
+.link {
+    margin-top: 90px;
+    margin-left: 40px;
+}
+
+.link a {
+    text-decoration: none;
+    color: #E75480;
+}
+
+footer {
+    background: transparent;
+    color: #E75480;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive to phone */
+@media only screen and (max-width: 600px) {
+    .heading {
+        flex-direction: column;
+        align-items: center;
+    }
   
+    .logo {
+        margin-bottom: 10px;
+    }
+  
+    nav {
+        margin-top: 10px;
+    }
+  
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    nav li {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+  
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .column {
+        margin: 10px 0;
+    }
+}
+
+/* Responsive to tablet */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .column {
+        flex: 1 1 1; 
+    }
+  }
+
+  /* Product Page */
+  .main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.div {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+}
+
+.h2, .p, .p + .p {
+    color:#000;
+    margin: 10px 0;
+}
+
+.p + .p {
+    font-weight: bold;
+    color: #E75480; 
+}
+
+.cart {
+    background-color: #E75480;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+
+
+  /* Checkout Page */
+.main2 {
+    color: #000;
+    font-family: 'Arial', sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.main2 th, .main2 td {
+    color:#000;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.main2 th {
+    background-color: #f2f2f2;
+}
+
+.main2 img {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 5px;
+}
+
+.pay-btn {
+    background: #E75480;
+    color:#fff;
+}
+
+
+  /* Admin Page */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+th, td {
+    color:#000;
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #fff;
+}
+
+td img {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+button {
+    padding: 8px 16px;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+}
+
+button.edit {
+    background-color: #E75480;
+}
+
+button.delete {
+    background-color: #f44336;
+}
+
+tr:hover {
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.edit-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    color:#000;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+#saveEdit, #cancelEdit {
+     background: #E75480;
+     color:#000;
+}
+
+#addProductButton {
+    background: #E75480;
+}
+
+/* Responsive to phone */
+@media only screen and (max-width: 600px) {
+    th, td {
+        padding: 8px;
+    }
+
+    td img {
+        max-width: 80px;
+    }
+
+    button {
+        padding: 6px 12px;
+    }
+}
+
+/* Responsive to tablet */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    th, td {
+        padding: 10px;
+    }
+
+    td img {
+        max-width: 120px;
+    }
+
+    button {
+        padding: 8px 14px;
+    }
+}
+
+.input {
+    color:#000;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+#searchBar {
+    color:#000;
+    background: #E75480;
+}
+
+/* Contact Page */
+.body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #333;
+}
+
+.main3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+}
+
+#sec3 {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.us {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#sec3 p {
+    font-size: 16px;
+}
+
+#sec3 a {
+    margin-right: 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+#sec3 i {
+    color:#E75480;
+}
+
+#sec4 {
+    flex: 1;
+    margin-left: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.contact-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#sec5 {
+    flex: 1;
+    margin-left: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input,
+select,
+textarea {
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background: #E75480;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+}
