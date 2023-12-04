@@ -9,7 +9,7 @@ html {
 }
 
 /* Landing/Index Page */
-body, h1, h2, h3, p, ul, li {
+#body, #h1, #p, #ul, #li {
     background: #fff;
     margin: 0;
     padding: 0;
@@ -502,6 +502,10 @@ tr:hover {
 #saveEdit, #cancelEdit {
      background: #E75480;
      color:#000;
+}
+
+#addProductButton {
+    background: #E75480;
 }
 
 /* Responsive to phone */

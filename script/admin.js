@@ -93,12 +93,22 @@ SHANK();
 
  // Function to open the edit form
  function openEditForm(item) {
-    document.getElementById('editName').value = item.name;
-    document.getElementById('editDescription').value = item.description;
-    document.getElementById('editPrice').value = item.price;
-    document.getElementById('editImage').value = item.url;
-    document.getElementById('editForm').style.display = 'block';
+    const editNameInput = document.getElementById('editName');
+    const editDescriptionInput = document.getElementById('editDescription');
+    const editPriceInput = document.getElementById('editPrice');
+    const editImageInput = document.getElementById('editImage');
+    const editForm = document.getElementById('editForm');
+
+    if (item) {
+        editNameInput.value = item.name;
+        editDescriptionInput.value = item.description;
+        editPriceInput.value = item.price;
+        editImageInput.value = item.url;
+    }
+
+    editForm.style.display = 'block';
 }
+
 
 // Function to close the edit form
 function closeEditForm() {
@@ -131,3 +141,43 @@ document.getElementById('saveEdit').addEventListener('click', function () {
 document.getElementById('cancelEdit').addEventListener('click', function () {
     closeEditForm();
 });
+
+// Function to add a new product
+function addProduct() {
+    const newName = document.getElementById('newName');
+    const newImg = document.getElementById('newImg');
+    const newDes = document.getElementById('newDes');
+    const newPrice = document.getElementById('newPrice');
+    const resultElement = document.getElementById('result');
+
+    // Clear previous results
+    resultElement.innerHTML = "";
+
+    event.preventDefault();
+
+    if (newName.value === '' || newImg.value === '' || newDes.value === '' || newPrice.value === '') {
+        alert('Please fill in all fields to add a new product!');
+    } else {
+        accessories.push(new Item(
+            accessories.length + 1,
+            newName.value,
+            newDes.value,
+            parseFloat(newPrice.value),
+            newImg.value
+        ));
+
+        // Clear input fields
+        newName.value = '';
+        newImg.value = '';
+        newDes.value = '';
+        newPrice.value = '';
+
+        // Update storage and display
+        store();
+        SHANK();
+    }
+}
+
+// Bind the addProduct function to a button or an event listener
+document.getElementById('addProductButton').addEventListener('click', addProduct);
+
