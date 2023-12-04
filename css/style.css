@@ -4,6 +4,7 @@
     padding: 0;
 }
 
+/* Styling the colour for the entire document */
 html {
     background: #fff;
 }
@@ -239,6 +240,7 @@ body {
     padding: 0;
 }
 
+/* Nav Bar */
 header {
     background: #fff;
     padding: 15px;
@@ -262,6 +264,7 @@ nav ul li {
     margin-right: 15px;
 }
 
+/* About the staff */
 .about-section {
     background: #fff;
     color:#000;
