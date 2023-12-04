@@ -48,7 +48,20 @@
             <button id="cancelEdit">Cancel</button>
         </div>
 
-        <button id="addProductButton">Add Product</button>
+        <div>
+            <input type="text" id="newName" placeholder="Product Name">
+            <input type="text" id="newImg" placeholder="Image URL">
+            <input type="text" id="newDes" placeholder="Product Description">
+            <input type="number" id="newPrice" placeholder="Product Price">
+            <button id="addProductButton">Add Product</button>
+        </div>
+        
+        <div id="result"></div>
+        
+        <div id="spinner" class="spinner" style="display: none;">
+            <i class="fas fa-spinner fa-spin"></i>
+        </div>
+        
     </main>
 
     <footer>&copy; 2023 SHANK. All rights reseved.</footer>

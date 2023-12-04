@@ -118,7 +118,7 @@ function closeEditForm() {
 // Event listener for the "Edit" button
 document.querySelector('table').addEventListener('click', function (event) {
     if (event.target.tagName === 'BUTTON' && event.target.textContent === 'Edit') {
-        const selectedItem = accessories[event.target.parentElement.parentElement.rowIndex - 1];
+        const selectedItem = accessories[event.target.parentElement.parentElement.rowIndex];
         openEditForm(selectedItem);
     }
 });
@@ -142,42 +142,101 @@ document.getElementById('cancelEdit').addEventListener('click', function () {
     closeEditForm();
 });
 
-// Function to add a new product
-function addProduct() {
-    const newName = document.getElementById('newName');
-    const newImg = document.getElementById('newImg');
-    const newDes = document.getElementById('newDes');
-    const newPrice = document.getElementById('newPrice');
-    const resultElement = document.getElementById('result');
+document.addEventListener('DOMContentLoaded', function () {
+    function addProduct() {
+        const newName = document.getElementById('newName');
+        const newImg = document.getElementById('newImg');
+        const newDes = document.getElementById('newDes');
+        const newPrice = document.getElementById('newPrice');
+        const resultElement = document.getElementById('result');
 
-    // Clear previous results
-    resultElement.innerHTML = "";
+        // Clear previous results
+        resultElement.innerHTML = "";
 
-    event.preventDefault();
+        event.preventDefault();
 
-    if (newName.value === '' || newImg.value === '' || newDes.value === '' || newPrice.value === '') {
-        alert('Please fill in all fields to add a new product!');
-    } else {
-        accessories.push(new Item(
-            accessories.length + 1,
-            newName.value,
-            newDes.value,
-            parseFloat(newPrice.value),
-            newImg.value
-        ));
+        if (newName.value === '' || newImg.value === '' || newDes.value === '' || newPrice.value === '') {
+            alert('Please fill in all fields to add a new product!');
+        } else {
+            accessories.push(new Item(
+                accessories.length + 1,
+                newName.value,
+                newDes.value,
+                parseFloat(newPrice.value),
+                newImg.value
+            ));
 
-        // Clear input fields
-        newName.value = '';
-        newImg.value = '';
-        newDes.value = '';
-        newPrice.value = '';
+            // Clear input fields
+            newName.value = '';
+            newImg.value = '';
+            newDes.value = '';
+            newPrice.value = '';
 
-        // Update storage and display
-        store();
-        SHANK();
+            // Update storage and display
+            store();
+            SHANK();
+        }
     }
-}
 
-// Bind the addProduct function to a button or an event listener
-document.getElementById('addProductButton').addEventListener('click', addProduct);
+    // Bind the addProduct function to a button or an event listener
+    document.getElementById('addProductButton').addEventListener('click', addProduct);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    function addProduct() {
+        const newName = document.getElementById('newName');
+        const newImg = document.getElementById('newImg');
+        const newDes = document.getElementById('newDes');
+        const newPrice = document.getElementById('newPrice');
+        const resultElement = document.getElementById('result');
+        const spinner = document.getElementById('spinner');
+
+        // Show the spinner
+        spinner.style.display = 'block';
+
+        // Clear previous results
+        resultElement.innerHTML = "";
+
+        event.preventDefault();
+
+        if (!newName || !newImg || !newDes || !newPrice) {
+            console.error('One or more input elements not found.');
+            return;
+        }
+
+        if (newName.value === '' || newImg.value === '' || newDes.value === '' || newPrice.value === '') {
+            alert('Please fill in all fields to add a new product!');
+        } else {
+            // Simulating an asynchronous operation (e.g., an API call)
+            setTimeout(function () {
+                accessories.push(new Item(
+                    accessories.length + 1,
+                    newName.value,
+                    newDes.value,
+                    parseFloat(newPrice.value),
+                    newImg.value
+                ));
+
+                // Clear input fields
+                newName.value = '';
+                newImg.value = '';
+                newDes.value = '';
+                newPrice.value = '';
+
+                // Update storage and display
+                store();
+                SHANK();
+
+                // Hide the spinner after 5 seconds
+                setTimeout(function () {
+                    spinner.style.display = 'none';
+                }, 5000);
+            }, 1000); // Simulating a delay of 1 second (adjust as needed)
+        }
+    }
+
+    // Bind the addProduct function to a button or an event listener
+    document.getElementById('addProductButton').addEventListener('click', addProduct);
+});
+
 

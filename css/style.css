@@ -508,6 +508,21 @@ tr:hover {
     background: #E75480;
 }
 
+#result {
+    background: #fff;
+    color: #000;
+}
+
+.spinner {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.spinner i {
+    font-size: 40px;
+    color: #333;
+}
+
 /* Responsive to phone */
 @media only screen and (max-width: 600px) {
     th, td {
