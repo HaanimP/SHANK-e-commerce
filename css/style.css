@@ -404,8 +404,24 @@ footer {
     font-size: 14px;
 }
 
+input#searchBar.input {
+    color: #fff;
+}
+#searchBar {
+    margin-left: 10%;
+    background: #E75480;
+    color: #fff;
+}
 
+#sortOptions {
+    background: #fff;
+    color: #000;
+}
 
+.unknown {
+    color: #000;
+    text-align: center;
+}
 
   /* Checkout Page */
 .main2 {
