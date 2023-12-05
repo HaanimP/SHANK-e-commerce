@@ -365,8 +365,8 @@ footer {
     }
   }
 
-  /* Product Page */
-  .main {
+/* Product Page */
+.main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
@@ -421,6 +421,35 @@ input#searchBar.input {
 .unknown {
     color: #000;
     text-align: center;
+}
+
+#searchBar img{
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive to phone */
+@media (max-width: 600px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+  
+  #searchBar {
+    margin-left: 1%;
+    margin-top: 2%;
+  }
+}
+
+/* Respoonsive to tablet */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #searchBar {
+        margin-left: 1%;
+        margin-top: 2%;
+    }
 }
 
   /* Checkout Page */
