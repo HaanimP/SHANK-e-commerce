@@ -13,7 +13,7 @@ function Item(id, name, description, price, url) {
 let item1 = new Item(
     1,
     'Scrunchies',
-    'A comfortable and stylish way to secure ponytails or buns.',
+    'Scrunchies are stylish hair accessories made of elastic fabric, designed to gently hold hair in a loose ponytail or bun, adding a trendy and comfortable touch to hairstyles. So cute and stylish for every occasion.',
     20.00,
     'https://i.postimg.cc/DZYpp7y3/scrunchies.jpg'
 );
@@ -21,7 +21,7 @@ let item1 = new Item(
 let item2 = new Item(
     2,
     'Hairpins',
-    'Designed to secure and style hair by holding it in place, offering a practical and elegant solution for various hairstyles.',
+    'Hairpins are small, versatile hair accessories used to secure and style hair. Typically made of metal or plastic, they come in various designs, providing a practical and decorative solution for hairstyles.',
     15.00,
     'https://i.postimg.cc/bJJLX4s0/hairpin.jpg'
 );
@@ -29,7 +29,7 @@ let item2 = new Item(
 let item3 = new Item(
     3,
     'Angel Brush',
-    'Designed to detangle hair smoothly and minimize breakage, providing a delicate and effective styling tool.',
+    'An angel brush is a gentle and ergonomic hairbrush designed for effortless detangling and smoothing. Its unique bristle configuration minimizes breakage, leaving hair silky and knot-free with ease.',
     50.00,
     'https://i.postimg.cc/fy6hSx6F/angel-brush.jpg'
 );
@@ -45,7 +45,7 @@ let item4 = new Item(
 let item5 = new Item(
     5,
     'Keychains',
-    'Serving as practical accessories to organize and personalize keys, often reflecting individual tastes or interests.',
+    'Keychains are portable accessories designed to hold keys and other small items. They come in various shapes, materials, and designs, serving as practical tools and personal expressions of style.',
     40.00,
     'https://i.postimg.cc/mZ696tY5/keychains.jpg'
 );
@@ -60,6 +60,17 @@ function store() {
 
 function SHANK() {
     let table = document.querySelector('table');
+    table.innerHTML = `
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    `;
     let jewelry = accessories.map(function (item, index) {
         return `<tr>
         <td>${item.id}</td>
@@ -72,7 +83,7 @@ function SHANK() {
         </tr>`;
     });
 
-    table.innerHTML = jewelry.join('');
+    table.innerHTML += jewelry.join('');
 
     let deleteButtons = document.querySelectorAll('.delete');
     deleteButtons.forEach((button) => {
