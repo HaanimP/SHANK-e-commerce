@@ -29,7 +29,7 @@ table.querySelector('tbody').innerHTML = bought.map((item, index) => {
         <td>${item.description}</td>
         <td>R${item.price.toFixed(2)}</td>
         <td>
-            <input type="number" class="quantity-input" placeholder="Qty" min="1" value="1" data-index=${index}>
+            <input type="number" class="quantity-input" placeholder="Qty" min="1" value="0" data-index=${index}>
         </td>
     </tr>`;
 }).join('');
