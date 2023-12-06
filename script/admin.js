@@ -50,9 +50,6 @@ let item5 = new Item(
     'https://i.postimg.cc/mZ696tY5/keychains.jpg'
 );
 
-
-
-
 // Putting accessories in an array
 accessories.push(item1, item2, item3, item4, item5);
 
@@ -160,7 +157,8 @@ document.getElementById('cancelEdit').addEventListener('click', function () {
 
 // Event listener for the "Save" button in the edit form
 document.getElementById('saveEdit').addEventListener('click', function () {
-    const rowIndex = document.getElementById('editForm').getAttribute('data-index');
+    const rowIndex = document.getElementById
+
 
     // Ensure the index is valid
     if (rowIndex === null) {
