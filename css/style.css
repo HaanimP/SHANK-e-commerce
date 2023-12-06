@@ -11,6 +11,8 @@ html {
 /* Landing/Index Page */
 #body, #h1, #p, #ul, #li {
     background: #fff;
+    color: #E75480;
+    font-weight:900;
     margin: 0;
     padding: 0;
 }
@@ -237,6 +239,13 @@ body {
     background: #fff;
     margin: 0;
     padding: 0;
+}
+
+
+h1.h1 {
+    color:#E75480;
+    background: #fff;
+    font-weight: 900;
 }
 
 header {
@@ -692,4 +701,96 @@ input[type="submit"] {
     cursor: pointer;
     border-radius: 4px;
     font-size: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px; 
+    }
+
+    header {
+        text-align: center; 
+    }
+
+    .logo {
+        width: 100%; 
+    }
+
+    nav {
+        text-align: center; 
+    }
+
+    nav ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    nav li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .remote {
+        padding: 20px; 
+    }
+
+    .form-container {
+        max-width: 100%;
+    }
+
+    main.main3 {
+        display: inline;
+    }
+
+    .contact-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+    body {
+        font-size: 16px; 
+    }
+
+    header {
+        text-align: center; 
+    }
+
+    .logo {
+        width: 10%; 
+    }
+
+    nav {
+        text-align: center; 
+    }
+
+    nav ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    nav li {
+        display: inline-block;
+        margin-right: 15px;
+    }
+
+    .remote {
+        padding: 30px; 
+    }
+
+    .form-container {
+        max-width: 80%; 
+    }
+
+    main.main3 {
+        display: inline;
+    }
+
+    .contact-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }

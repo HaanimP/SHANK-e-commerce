@@ -50,6 +50,9 @@ let item5 = new Item(
     'https://i.postimg.cc/mZ696tY5/keychains.jpg'
 );
 
+
+
+
 // Putting accessories in an array
 accessories.push(item1, item2, item3, item4, item5);
 
@@ -78,17 +81,25 @@ function SHANK() {
         <td>R${item.price.toFixed(2)}</td>
         <td>${item.description}</td>
         <td><img src="${item.url}" alt="${item.name}"></img></td>
-        <td><button class="edit">Edit</button></td>
-        <td><button class="delete" value="${index}">Delete</button></td>
+        <td><button class="edit" data-index="${index}">Edit</button></td>
+        <td><button class="delete" data-index="${index}">Delete</button></td>
         </tr>`;
     });
 
     table.innerHTML += jewelry.join('');
 
+    let editButtons = document.querySelectorAll('.edit');
+    editButtons.forEach((button) => {
+        button.addEventListener('click', function () {
+            const index = button.getAttribute('data-index');
+            openEditForm(accessories[index]);
+        });
+    });
+
     let deleteButtons = document.querySelectorAll('.delete');
     deleteButtons.forEach((button) => {
         button.addEventListener('click', function () {
-            remove(button.value, SHANK);
+            remove(button.getAttribute('data-index'), SHANK);
         });
     });
 }
@@ -102,8 +113,8 @@ function remove(position, callback) {
 store();
 SHANK();
 
- // Function to open the edit form
- function openEditForm(item) {
+// Function to open the edit form
+function openEditForm(item) {
     const editNameInput = document.getElementById('editName');
     const editDescriptionInput = document.getElementById('editDescription');
     const editPriceInput = document.getElementById('editPrice');
@@ -115,29 +126,23 @@ SHANK();
         editDescriptionInput.value = item.description;
         editPriceInput.value = item.price;
         editImageInput.value = item.url;
+        editForm.setAttribute('data-index', item.id); // Store the index in the form
     }
 
     editForm.style.display = 'block';
 }
 
-
-// Function to close the edit form
-function closeEditForm() {
-    document.getElementById('editForm').style.display = 'none';
-}
-
-// Event listener for the "Edit" button
-document.querySelector('table').addEventListener('click', function (event) {
-    if (event.target.tagName === 'BUTTON' && event.target.textContent === 'Edit') {
-        const selectedItem = accessories[event.target.parentElement.parentElement.rowIndex];
-        openEditForm(selectedItem);
-    }
-});
-
 // Event listener for the "Save" button in the edit form
 document.getElementById('saveEdit').addEventListener('click', function () {
-    // Update the selected accessory with the edited values
-    const selectedItem = accessories[event.target.parentElement.parentElement.rowIndex - 1];
+    const rowIndex = document.getElementById('editForm').getAttribute('data-index');
+    
+    // Ensure the index is valid
+    if (rowIndex === null) {
+        console.error("Invalid row index");
+        return;
+    }
+
+    const selectedItem = accessories.find(item => item.id == rowIndex);
     selectedItem.name = document.getElementById('editName').value;
     selectedItem.description = document.getElementById('editDescription').value;
     selectedItem.price = parseFloat(document.getElementById('editPrice').value);
@@ -152,6 +157,61 @@ document.getElementById('saveEdit').addEventListener('click', function () {
 document.getElementById('cancelEdit').addEventListener('click', function () {
     closeEditForm();
 });
+
+// Event listener for the "Save" button in the edit form
+document.getElementById('saveEdit').addEventListener('click', function () {
+    const rowIndex = document.getElementById('editForm').getAttribute('data-index');
+
+    // Ensure the index is valid
+    if (rowIndex === null) {
+        console.error("Invalid row index");
+        return;
+    }
+
+    const selectedItem = accessories.find(item => item.id == rowIndex);
+    selectedItem.name = document.getElementById('editName').value;
+    selectedItem.description = document.getElementById('editDescription').value;
+    selectedItem.price = parseFloat(document.getElementById('editPrice').value);
+    selectedItem.url = document.getElementById('editImage').value;
+
+    // Update the table and close the edit form
+    SHANK();
+    closeEditForm();
+});
+
+// Event listener for the "Cancel" button in the edit form
+document.getElementById('cancelEdit').addEventListener('click', function () {
+    // Close the edit form without saving changes
+    closeEditForm();
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    function addProduct() {
+        // ... (existing code)
+
+        // Update storage and display
+        store();
+        SHANK();
+
+        // Close the add product modal
+        closeAddProductModal();
+    }
+
+    // Bind the addProduct function to a button or an event listener
+    document.getElementById('addProductButton').addEventListener('click', addProduct);
+});
+
+// Function to close the edit form modal
+function closeEditForm() {
+    const editForm = document.getElementById('editForm');
+    editForm.style.display = 'none';
+}
+
+// Function to close the add product modal
+function closeAddProductModal() {
+    document.getElementById('addProductModal').style.display = 'none';
+}
+
 
 document.addEventListener('DOMContentLoaded', function () {
     function addProduct() {
@@ -249,5 +309,4 @@ document.addEventListener('DOMContentLoaded', function () {
     // Bind the addProduct function to a button or an event listener
     document.getElementById('addProductButton').addEventListener('click', addProduct);
 });
-
 
