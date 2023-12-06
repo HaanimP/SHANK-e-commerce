@@ -1,4 +1,4 @@
-const localStorageKeyBought = 'bought';
+let localStorageKeyBought = 'bought';
 
 let bought = JSON.parse(localStorage.getItem(localStorageKeyBought)) || [];
 let main = document.querySelector('.main');
