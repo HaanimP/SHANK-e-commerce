@@ -1,5 +1,9 @@
 // getting the items from localstorage from the array that was bought
 let bought = JSON.parse(localStorage.getItem('bought'));
+// Remove duplicates from the bought array based on the product's unique identifier (e.g., product ID)
+bought = bought.filter((item, index, self) =>
+    index === self.findIndex((t) => t.productId === item.productId)
+);
 // setting the table into the main
 let table = document.querySelector('.main2');
 let totalAmountElement = document.getElementById('totalAmount');
@@ -7,16 +11,16 @@ let payButton = document.getElementById('payButton');
 
 // the function to calculate the amount of all the products bought
 function calculateTotalAmount() {
-    //reduce function () calculates the total amount by iterating over the array for things being bought
+    // reduce function () calculates the total amount by iterating over the array for things being bought
     let totalAmount = bought.reduce((total, item, index) => {
         // The quantity of the item is obtained from an input field
-        // anded a 'data-index' attribute matching the current index into the loop.
+        // and a 'data-index' attribute matching the current index into the loop.
         const quantity = document.querySelector(`.quantity-input[data-index="${index}"]`).value;
         // total = adding the product of the item's price and the quantity.
         return total + item.price * quantity;
-    }, 0).toFixed(2);  //result is converted to a string with exactly two decimal places using the toFixed(2) method.
+    }, 0).toFixed(2); // result is converted to a string with exactly two decimal places using the toFixed(2) method.
 
-    // The totalAmount is then assigned to the 'textContent' property of an element for the display on css
+    // The totalAmount is then assigned to the 'textContent' property of an element for display on CSS
     totalAmountElement.textContent = `Total Amount: R${totalAmount}`;
 }
 
