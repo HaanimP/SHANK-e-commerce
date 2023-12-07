@@ -863,6 +863,11 @@ button.btn.btn-secondary {
     color: #fff;
 }
 
+select#sortSelect.form-select {
+    color:#E75480;
+    font-weight: 700;
+}
+
 
 /* Responsive to phone */
 @media only screen and (max-width: 600px) {

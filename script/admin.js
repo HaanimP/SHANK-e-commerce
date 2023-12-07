@@ -307,3 +307,23 @@ document.addEventListener('DOMContentLoaded', function () {
     // Bind the addProduct function to a button or an event listener
     document.getElementById('addProductButton').addEventListener('click', addProduct);
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Initial display of products
+    SHANK();
+
+    // Event listener for the sort dropdown
+    document.getElementById('sortSelect').addEventListener('change', function () {
+        const sortOption = this.value;
+
+        // Sort the accessories based on the selected option
+        if (sortOption === 'price-asc') {
+            accessories.sort((a, b) => a.price - b.price);
+        } else if (sortOption === 'price-desc') {
+            accessories.sort((a, b) => b.price - a.price);
+        }
+
+        // Update the displayed products
+        SHANK();
+    });
+});
