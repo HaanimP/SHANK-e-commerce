@@ -48,13 +48,44 @@
             <button id="cancelEdit">Cancel</button>
         </div>
 
-        <div>
-            <input type="text" id="newName" placeholder="Product Name">
-            <input type="text" id="newImg" placeholder="Image URL">
-            <input type="text" id="newDes" placeholder="Product Description">
-            <input type="number" id="newPrice" placeholder="Product Price">
-            <button id="addProductButton">Add Product</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">
+            Add Product
+          </button>    
+
+            <!-- Modal -->
+        <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="addProductModalLabel">Add a New Product</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <!-- Form inside the modal -->
+            <form id="addProductForm">
+                <div class="mb-3">
+                <label for="newName" class="form-label">Product Name:</label>
+                <input type="text" class="form-control" id="newName" placeholder="Product Name">
+                </div>
+                <div class="mb-3">
+                <label for="newImg" class="form-label">Image URL:</label>
+                <input type="text" class="form-control" id="newImg" placeholder="Image URL">
+                </div>
+                <div class="mb-3">
+                <label for="newDes" class="form-label">Product Description:</label>
+                <input type="text" class="form-control" id="newDes" placeholder="Product Description">
+                </div>
+                <div class="mb-3">
+                <label for="newPrice" class="form-label">Product Price:</label>
+                <input type="number" class="form-control" id="newPrice" placeholder="Product Price">
+                </div>
+                <button type="button" class="btn btn-primary" id="addProductButton" data-bs-dismiss="modal">Add Product</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </form>
+            </div>
         </div>
+        </div>
+    </div>
         
         <div id="result"></div>
         
@@ -65,6 +96,7 @@
     </main>
 
     <footer>&copy; 2023 SHANK. All rights reseved.</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="/script/admin.js"></script>
 </body>
 </html>

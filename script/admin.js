@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         if (newName.value === '' || newImg.value === '' || newDes.value === '' || newPrice.value === '') {
-            alert('Please fill in all fields to add a new product!');
+            alert('You have added a new product!');
         } else {
             // Simulating an asynchronous operation (e.g., an API call)
             setTimeout(function () {
@@ -307,4 +307,3 @@ document.addEventListener('DOMContentLoaded', function () {
     // Bind the addProduct function to a button or an event listener
     document.getElementById('addProductButton').addEventListener('click', addProduct);
 });
-
