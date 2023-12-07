@@ -48,18 +48,53 @@ table.addEventListener('input', function(event){ // event parameter contains inf
 
 // Event listener for the "Pay" button
 payButton.addEventListener('click', function() {
-    alert('Payment completed. Thank you for your purchase!');
+    alert('Payment completed. Thank you for your purchase :) !');
     
     // Clear the checkout page
     clearCheckoutPage();
 
-    // Add any additional logic for completing the payment
+
 });
 
 // handles the payment for item at index and with quantity chosen
 function handlePayment(index, quantity) {
     // Use the quantity parameter in your logic
-    alert(`You have selected ${quantity} ${quantity > 1 ? 'items' : 'item'} of ${bought[index].name}.`);
+    //alert(`You have selected ${quantity} ${quantity > 1 ? 'items' : 'item'} of ${bought[index].name}.`);
+    
+    // Convert quantity to a number
+    const parsedQuantity = parseInt(quantity);
+
+    // Check if the product is already in the 'bought' array
+    const existingProductIndex = bought.findIndex((item) => item.id === bought[index].id);
+
+    if (existingProductIndex !== -1) {
+        // If the product already exists, update the quantity
+        bought[existingProductIndex].quantity = parsedQuantity;
+    } else {
+        // If the product is not in the array, add it with the specified quantity
+        bought[index].quantity = parsedQuantity;
+    }
+
+// Update the local storage
+localStorage.setItem('bought', JSON.stringify(bought));
+
+// Update the table content
+table.querySelector('tbody').innerHTML = bought.map((item, i) => {
+    return `
+    <tr>
+        <td>${i + 1}</td>
+        <td><img src="${item.url}" alt="${item.name}" style="max-width: 50px;"></td>
+        <td>${item.name}</td>
+        <td>${item.description}</td>
+        <td>R${item.price.toFixed(2)}</td>
+        <td>
+            <input type="number" class="quantity-input" placeholder="Qty" min="1" value="${item.quantity || 0}" data-index=${i}>
+        </td>
+    </tr>`;
+}).join('');
+
+// Recalculate and update the total amount
+calculateTotalAmount();
 }
 
 // Function to clear the checkout page
