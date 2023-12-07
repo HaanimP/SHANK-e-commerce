@@ -282,10 +282,18 @@ nav ul li {
     text-align: center;
 }
 
+h2.team-heading {
+    font-weight: 800;
+}
+
 .team-heading {
     text-align: center;
     color: #E75480;
     margin-top: 40px;
+}
+
+p.staff {
+    font-weight: 700;
 }
 
 .row {
@@ -308,8 +316,8 @@ nav ul li {
 }
 
 .card img {
-    width: 100%;
-    border-radius: 50%;
+    width: 350px;
+    height: 350px;
     margin-bottom: 15px;
 }
 
@@ -326,6 +334,7 @@ nav ul li {
 .link a {
     text-decoration: none;
     color: #E75480;
+    font-weight: 800;
 }
 
 footer {
