@@ -206,6 +206,9 @@ footer {
   
     .logo {
         margin-bottom: 10px;
+        width: 100%;
+        height: 100%;
+        margin-left: -80%;
     }
   
     nav {
@@ -220,6 +223,14 @@ footer {
     nav li {
         margin: 0;
         margin-bottom: 10px;
+    }
+
+    button.navbar-toggler {
+        margin-left: -80%;
+    }
+
+    #h1 {
+        margin-left: 10%;
     }
 
     .store-image {
@@ -364,6 +375,9 @@ footer {
   
     .logo {
         margin-bottom: 10px;
+        height: 100px;
+        width: 100px;
+        margin-left: -80%;
     }
   
     nav {
@@ -378,6 +392,14 @@ footer {
     nav li {
         margin: 0;
         margin-bottom: 10px;
+    }
+
+    #h1 {
+        margin-left: -10%;
+    }
+
+    button.navbar-toggler {
+        margin-left: -80%;
     }
   
     .row {
@@ -403,6 +425,9 @@ footer {
       
     .logo {
         margin-bottom: 10px;
+        width: 100%;
+        height: 100%;
+        margin-left: -80%;
     }
       
     nav {
@@ -417,6 +442,14 @@ footer {
     nav li {
         margin: 0;
         margin-bottom: 10px;
+    }
+
+    button.navbar-toggler {
+        margin-left: -80%;
+    }
+
+    #h1 {
+        margin-left: 10%;
     }
 
     .column {
