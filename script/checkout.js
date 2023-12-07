@@ -1,9 +1,9 @@
 // getting the items from localstorage from the array that was bought
-let bought = JSON.parse(localStorage.getItem('bought'));
+let bought = JSON.parse(localStorage.getItem('bought')) || [];
 // Remove duplicates from the bought array based on the product's unique identifier (e.g., product ID)
 bought = bought.filter((item, index, self) =>
-    index === self.findIndex((t) => t.productId === item.productId)
-);
+    self.findIndex((t) => t.id === item.id)
+===index);
 // setting the table into the main
 let table = document.querySelector('.main2');
 let totalAmountElement = document.getElementById('totalAmount');
@@ -46,8 +46,13 @@ table.addEventListener('input', function(event){ // event parameter contains inf
     }
 });
 
+// Event listener for the "Pay" button
 payButton.addEventListener('click', function() {
     alert('Payment completed. Thank you for your purchase!');
+    
+    // Clear the checkout page
+    clearCheckoutPage();
+
     // Add any additional logic for completing the payment
 });
 
@@ -55,4 +60,19 @@ payButton.addEventListener('click', function() {
 function handlePayment(index, quantity) {
     // Use the quantity parameter in your logic
     alert(`You have selected ${quantity} ${quantity > 1 ? 'items' : 'item'} of ${bought[index].name}.`);
+}
+
+// Function to clear the checkout page
+function clearCheckoutPage() {
+    // Reset the 'bought' array to an empty array
+    bought = [];
+    
+    // Update the local storage
+    localStorage.setItem('bought', JSON.stringify(bought));
+
+    // Clear the table content
+    table.querySelector('tbody').innerHTML = '';
+
+    // Clear the total amount
+    totalAmountElement.textContent = 'Total Amount: R0.00';
 }
