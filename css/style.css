@@ -30,7 +30,6 @@ header {
     text-align: center;
     padding: 20px 0;
     background: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .heading {
@@ -135,6 +134,10 @@ footer {
     header {
         padding: 10px 0;
     }
+
+    #h1 {
+        margin-left: -10%;
+    }
   
     .heading {
         flex-direction: column;
@@ -143,6 +146,9 @@ footer {
   
     .logo {
         margin-bottom: 10px;
+        height: 100px;
+        width: 100px;
+        margin-left: -80%;
     }
   
     nav {
@@ -157,6 +163,10 @@ footer {
     nav li {
         margin: 0;
         margin-bottom: 10px;
+    }
+
+    button.navbar-toggler {
+        margin-left: -80%;
     }
     
     .store-image {
