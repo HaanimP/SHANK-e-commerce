@@ -474,6 +474,37 @@ main.main2 {
     font-weight: 1000;
 }
 
+/* Responsive to phone */
+@media only screen and (max-width: 600px) {
+    .heading {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .logo {
+        margin-bottom: 10px;
+    }
+  
+    nav {
+        margin-top: 10px;
+    }
+  
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    nav li {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    #payButton {
+        margin-left: 40%;
+    }
+
+}
+
   /* Admin Page */
   table {
     width: 100%;
@@ -560,6 +591,29 @@ tr:hover {
 
 /* Responsive to phone */
 @media only screen and (max-width: 600px) {
+    .heading {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .logo {
+        margin-bottom: 10px;
+    }
+  
+    nav {
+        margin-top: 10px;
+    }
+  
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    nav li {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
     th, td {
         padding: 8px;
     }

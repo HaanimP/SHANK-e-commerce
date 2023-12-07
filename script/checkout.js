@@ -53,7 +53,7 @@ payButton.addEventListener('click', function() {
     // Clear the checkout page
     clearCheckoutPage();
 
-    // Add any additional logic for completing the payment
+
 });
 
 // handles the payment for item at index and with quantity chosen
