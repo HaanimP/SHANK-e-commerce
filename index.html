@@ -8,27 +8,49 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://kit.fontawesome.com/aaa9727a99.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="https://i.postimg.cc/qMx3W5BD/logo2.png" type="image/x-icon"/>
+    <link rel="icon" href="https://i.postimg.cc/xCCgGFP6/logo2.png" type="image/x-icon"/>
     <title>SHANK Home</title>
 </head>
 <body id="body">
     <!--Nav Bar-->
     <header>
-        <h1 id="h1">SHANK</h1>
-        <div class="heading">
-            <img class="logo" src="https://i.postimg.cc/qMx3W5BD/logo2.png" alt="logo2">
-            <nav>
-                <ul id="ul">
-                    <li id="li"><a href="/index.html"><i class="fa-solid fa-shop"></i>Home</a></li>
-                    <li id="li"><a href="/html/about.html"><i class="fa-solid fa-people-group"></i>About</a></li>
-                    <li id="li"><a href="/html/product.html"><i class="fa-regular fa-gem"></i>Product</a></li>
-                    <li id="li"><a href="/html/checkout.html"><i class="fa-solid fa-cart-shopping"></i>Checkout</a></li>
-                    <li id="li"><a href="/html/admin.html"><i class="fa-solid fa-chart-simple"></i>Admin</a></li>
-                    <li id="li"><a href="/html/contact.html"><i class="fa-solid fa-phone"></i>Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="/index.html">
+                    <img src="https://i.postimg.cc/qMx3W5BD/logo2.png" alt="logo2" class="logo">
+                    <span id="h1">SHANK</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html"><i class="fas fa-shop"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/html/about.html"><i class="fas fa-people-group"></i> About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/html/product.html"><i class="far fa-gem"></i> Product</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/html/checkout.html"><i class="fas fa-cart-shopping"></i> Checkout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/html/admin.html"><i class="fas fa-chart-simple"></i> Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/html/contact.html"><i class="fas fa-phone"></i> Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
+    
+    
+    
 
     <!--Landing Page-->
     <main>
@@ -98,7 +120,8 @@
                 <p>&copy; 2023 SHANK. All rights reserved.</p>
             </footer>
         </div>
-        
+     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/script/index.js"></script>
 </body>
 </html>
