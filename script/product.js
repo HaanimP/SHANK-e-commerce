@@ -1,4 +1,4 @@
-let localStorageKeyBought = "bought";
+let localStorageKeyBought = "bought"; //array for the checkout page
 
 let bought;
 
@@ -9,8 +9,10 @@ try {
   bought = [];
 }
 
+//the main in the body of the html document
 let main = document.querySelector(".main");
 
+//the array the products are stored into
 let accessories;
 
 try {
@@ -20,6 +22,7 @@ try {
   accessories = [];
 }
 
+//if else statement for the spinner and products to display
 function renderItems(items) {
   try {
     if (items.length === 0) {
@@ -43,6 +46,7 @@ function renderItems(items) {
   }
 }
 
+//function to add items to cart
 function add(index) {
   try {
     bought.push(accessories[index]);
@@ -62,6 +66,7 @@ main.addEventListener("click", function (event) {
   }
 });
 
+//function to search for specific products or to sort it in price range
 function searchAndSort() {
   try {
     let searchBar = document.getElementById("searchBar").value.toLowerCase();

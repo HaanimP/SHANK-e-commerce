@@ -1,7 +1,7 @@
 try {
   let bought = JSON.parse(localStorage.getItem("bought")) || [];
 
-  // Remove duplicates from the bought array based on the product's unique identifier (e.g., product ID)
+  // Remove duplicates from the bought array 
   bought = bought.filter(
     (item, index, self) => self.findIndex((t) => t.id === item.id) === index
   );
@@ -89,7 +89,6 @@ try {
   // handles the payment for item at index and with quantity chosen
   function handlePayment(index, quantity) {
     try {
-      // Use the quantity parameter in your logic
       //alert(`You have selected ${quantity} ${quantity > 1 ? 'items' : 'item'} of ${bought[index].name}.`);
 
       // Convert quantity to a number

@@ -58,6 +58,7 @@ function store() {
   localStorage.setItem("accessories", JSON.stringify(accessories));
 }
 
+//putting the array in a table with table headings
 function SHANK() {
   let table = document.querySelector("table");
   table.innerHTML = `
@@ -83,8 +84,9 @@ function SHANK() {
             </tr>`;
   });
 
-  table.innerHTML += jewelry.join("");
+  table.innerHTML += jewelry.join(""); //removes the comma/colon from the table
 
+  //declaring the edit button
   let editButtons = document.querySelectorAll(".edit");
   editButtons.forEach((button) => {
     button.addEventListener("click", function () {
@@ -93,6 +95,7 @@ function SHANK() {
     });
   });
 
+  //declaring the delete button
   let deleteButtons = document.querySelectorAll(".delete");
   deleteButtons.forEach((button) => {
     button.addEventListener("click", function () {
@@ -152,12 +155,12 @@ document.getElementById("saveEdit").addEventListener("click", function () {
   closeEditForm();
 });
 
-// Event listener for the "Cancel" button in the edit form
+// Event listener for the Cancel button in the edit form
 document.getElementById("cancelEdit").addEventListener("click", function () {
   closeEditForm();
 });
 
-// Event listener for the "Save" button in the edit form
+// Event listener for the Save button in the edit form
 document.getElementById("saveEdit").addEventListener("click", function () {
   const rowIndex = document.getElementById;
 
@@ -178,7 +181,7 @@ document.getElementById("saveEdit").addEventListener("click", function () {
   closeEditForm();
 });
 
-// Event listener for the "Cancel" button in the edit form
+// Event listener for the Cancel button in the edit form
 document.getElementById("cancelEdit").addEventListener("click", function () {
   // Close the edit form without saving changes
   closeEditForm();
@@ -317,7 +320,7 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(function () {
           spinner.style.display = "none";
         }, 5000);
-      }, 1000); // Simulating a delay of 1 second (adjust as needed)
+      }, 1000); // Simulating a delay of 1 second
     }
   }
 
