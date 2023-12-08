@@ -54,35 +54,38 @@ let item5 = new Item(
 accessories.push(item1, item2, item3, item4, item5);
 
 function store() {
-  // Setting array to local storage
-  localStorage.setItem("accessories", JSON.stringify(accessories));
+    // Setting array to local storage using stringify so that it becomes a string
+    localStorage.setItem('accessories', JSON.stringify(accessories));
 }
 
 //putting the array in a table with table headings
 function SHANK() {
-  let table = document.querySelector("table");
-  table.innerHTML = `
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Description</th>
-                <th>Image</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
-        `;
-  let jewelry = accessories.map(function (item, index) {
-    return `<tr>
-            <td>${item.id}</td>
-            <td>${item.name}</td>
-            <td>R${item.price.toFixed(2)}</td>
-            <td>${item.description}</td>
-            <td><img src="${item.url}" alt="${item.name}"></img></td>
-            <td><button class="edit" data-index="${index}">Edit</button></td>
-            <td><button class="delete" data-index="${index}">Delete</button></td>
-            </tr>`;
-  });
+  //selecting the table element on the document where the array will be displayed in
+    let table = document.querySelector('table');
+    //adding headings as well as the information in the array onto the html document 
+    table.innerHTML = `
+        <tr> 
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    `; // mapping the array to populate the table
+    let jewelry = accessories.map(function (item, index) {
+        return `<tr>
+        <td>${item.id}</td>
+        <td>${item.name}</td>
+        <td>R${item.price.toFixed(2)}</td>
+        <td>${item.description}</td>
+        <td><img src="${item.url}" alt="${item.name}"></img></td>
+        <td><button class="edit" data-index="${index}">Edit</button></td>
+        <td><button class="delete" data-index="${index}">Delete</button></td>
+        </tr>`;
+    });
+  }
 
   table.innerHTML += jewelry.join(""); //removes the comma/colon from the table
 
@@ -95,19 +98,24 @@ function SHANK() {
     });
   });
 
-  //declaring the delete button
-  let deleteButtons = document.querySelectorAll(".delete");
-  deleteButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      remove(button.getAttribute("data-index"), SHANK);
+    // declaring the delete button with the class of delete, for each button there is an event listener 
+    // with the attribute of its index, when it is clicked to delete something it checks the index in the array
+    // and then removes the index and information in the array
+    let deleteButtons = document.querySelectorAll('.delete');
+    deleteButtons.forEach((button) => {
+        button.addEventListener('click', function () {
+            remove(button.getAttribute('data-index'), SHANK);
+        });
     });
-  });
-}
+
 
 function remove(position, callback) {
-  accessories.splice(position, 1);
-  store();
-  callback();
+  // removes one element at the position removed in the array
+    accessories.splice(position, 1);
+    //updating the array in local storage
+    store();
+    //calling function to do actions after removed
+    callback();
 }
 
 store();
@@ -115,11 +123,12 @@ SHANK();
 
 // Function to open the edit form
 function openEditForm(item) {
-  const editNameInput = document.getElementById("editName");
-  const editDescriptionInput = document.getElementById("editDescription");
-  const editPriceInput = document.getElementById("editPrice");
-  const editImageInput = document.getElementById("editImage");
-  const editForm = document.getElementById("editForm");
+  // getting back elements from the edit form
+    const editNameInput = document.getElementById('editName');
+    const editDescriptionInput = document.getElementById('editDescription');
+    const editPriceInput = document.getElementById('editPrice');
+    const editImageInput = document.getElementById('editImage');
+    const editForm = document.getElementById('editForm');
 
   if (item) {
     editNameInput.value = item.name;
@@ -176,16 +185,18 @@ document.getElementById("saveEdit").addEventListener("click", function () {
   selectedItem.price = parseFloat(document.getElementById("editPrice").value);
   selectedItem.url = document.getElementById("editImage").value;
 
-  // Update the table and close the edit form
-  SHANK();
-  closeEditForm();
+    // Update the table to add the edited information and close the edit form
+    SHANK();
+    // closes the edit form after changes made are saved
+    closeEditForm();
 });
 
-// Event listener for the Cancel button in the edit form
-document.getElementById("cancelEdit").addEventListener("click", function () {
-  // Close the edit form without saving changes
-  closeEditForm();
+// Event listener for the "Cancel" button in the edit form
+document.getElementById('cancelEdit').addEventListener('click', function () {
+    // Close the edit form without saving changes
+    closeEditForm();
 });
+
 
 //function to add product
 document.addEventListener("DOMContentLoaded", function () {
@@ -198,21 +209,21 @@ document.addEventListener("DOMContentLoaded", function () {
     closeAddProductModal();
   }
 
-  // combine the addProduct function to a button or an event listener
-  document
-    .getElementById("addProductButton")
-    .addEventListener("click", addProduct);
+    // when the button is clicked the add product function is triggered
+    document.getElementById('addProductButton').addEventListener('click', addProduct);
 });
 
 // Function to close the edit form modal
 function closeEditForm() {
-  const editForm = document.getElementById("editForm");
-  editForm.style.display = "none";
+  // getting the edit form by its id
+    const editForm = document.getElementById('editForm');
+    editForm.style.display = 'none';
 }
 
 // Function to close the add product modal
 function closeAddProductModal() {
-  document.getElementById("addProductModal").style.display = "none";
+  // getting the add product modal by its id
+    document.getElementById('addProductModal').style.display = 'none';
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -252,17 +263,18 @@ document.addEventListener("DOMContentLoaded", function () {
       newDes.value = "";
       newPrice.value = "";
 
-      // Update storage and display
-      store();
-      SHANK();
+            // Update storage of the array and display on the html
+            store();
+            SHANK();
+        }
     }
-  }
 
   // combine the addProduct function to a button or an event listener
   document
     .getElementById("addProductButton")
     .addEventListener("click", addProduct);
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
   function addProduct() {
@@ -294,7 +306,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       alert("You have added a new product!");
     } else {
-      // Simulating an asynchronous operation (e.g., an API call)
+      // Simulating an asynchronous operation 
       setTimeout(function () {
         accessories.push(
           new Item(
@@ -316,13 +328,13 @@ document.addEventListener("DOMContentLoaded", function () {
         store();
         SHANK();
 
-        // Hide the spinner after 5 seconds
-        setTimeout(function () {
-          spinner.style.display = "none";
-        }, 5000);
-      }, 1000); // Simulating a delay of 1 second
+                // Hide the spinner after 5 seconds
+                setTimeout(function () {
+                    spinner.style.display = 'none';
+                }, 5000);
+            }, 1000); // Simulating a delay of 1 second 
+        }
     }
-  }
 
   // combine the addProduct function to a button or an event listener
   document
