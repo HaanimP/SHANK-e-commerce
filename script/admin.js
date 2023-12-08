@@ -85,9 +85,10 @@ function SHANK() {
         <td><button class="delete" data-index="${index}">Delete</button></td>
         </tr>`;
     });
+    table.innerHTML += jewelry.join(""); 
   }
 
-  table.innerHTML += jewelry.join(""); //removes the comma/colon from the table
+  //removes the comma/colon from the table
 
   //declaring the edit button
   let editButtons = document.querySelectorAll(".edit");
