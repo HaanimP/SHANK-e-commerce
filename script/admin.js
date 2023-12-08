@@ -85,10 +85,9 @@ function SHANK() {
         <td><button class="delete" data-index="${index}">Delete</button></td>
         </tr>`;
     });
-    table.innerHTML += jewelry.join(""); 
-  }
+    
 
-  //removes the comma/colon from the table
+  table.innerHTML += jewelry.join(""); //removes the comma/colon from the table
 
   //declaring the edit button
   let editButtons = document.querySelectorAll(".edit");
@@ -108,7 +107,7 @@ function SHANK() {
             remove(button.getAttribute('data-index'), SHANK);
         });
     });
-
+}
 
 function remove(position, callback) {
   // removes one element at the position removed in the array
@@ -307,7 +306,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       alert("You have added a new product!");
     } else {
-      // Simulating an asynchronous operation 
+      // Simulating an asynchronous operation (e.g., an API call)
       setTimeout(function () {
         accessories.push(
           new Item(
