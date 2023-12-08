@@ -1,129 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://kit.fontawesome.com/aaa9727a99.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="https://i.postimg.cc/qMx3W5BD/logo2.png" type="image/x-icon"/>
+    <link rel="icon" href="https://i.postimg.cc/qMx3W5BD/logo2.png" type="image/x-icon" />
     <title>SHANK Admin</title>
 </head>
+
 <body>
     <header>
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container">
-                    <a class="navbar-brand" href="/index.html">
-                        <img src="https://i.postimg.cc/qMx3W5BD/logo2.png" alt="logo2" class="logo">
-                        <span id="h1">SHANK</span>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/index.html"><i class="fas fa-shop"></i> Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/html/about.html"><i class="fas fa-people-group"></i> About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/html/product.html"><i class="far fa-gem"></i> Product</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/html/checkout.html"><i class="fas fa-cart-shopping"></i> Checkout</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/html/admin.html"><i class="fas fa-chart-simple"></i> Admin</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/html/contact.html"><i class="fas fa-phone"></i> Contact</a>
-                            </li>
-                        </ul>
-                    </div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="/index.html">
+                    <img src="https://i.postimg.cc/qMx3W5BD/logo2.png" alt="logo2" class="logo">
+                    <span id="h1">SHANK</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html"><i class="fas fa-shop"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/html/about.html"><i class="fas fa-people-group"></i> About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/html/product.html"><i class="far fa-gem"></i> Product</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/html/checkout.html"><i class="fas fa-cart-shopping"></i>
+                                Checkout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/html/admin.html"><i class="fas fa-chart-simple"></i> Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/html/contact.html"><i class="fas fa-phone"></i> Contact</a>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
+            </div>
+        </nav>
     </header>
-    
-        <div class="container mt-3">
-            <label for="sortSelect">Sort by:</label>
-            <select class="form-select" id="sortSelect">
-                <option value="price-asc">Price: Low to High</option>
-                <option value="price-desc">Price: High to Low</option>
-            </select>
-        </div>
+
+    <div class="container mt-3">
+        <label for="sortSelect">Sort by:</label>
+        <select class="form-select" id="sortSelect">
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+        </select>
+    </div>
 
     <main>
-            <table>
-                
-            </table>
+        <table>
 
-            <div id="editForm" class="edit-form">
-                <h2>Edit Accessory</h2>
-                <label for="editName">Name:</label>
-                <input type="text" id="editName">
-                <label for="editDescription">Description:</label>
-                <textarea id="editDescription"></textarea>
-                <label for="editPrice">Price:</label>
-                <input type="number" id="editPrice" step="0.01">
-                <label for="editImage">Image URL:</label>
-                <input type="text" id="editImage">
-                <button id="saveEdit">Save</button>
-                <button id="cancelEdit">Cancel</button>
-            </div>
+        </table>
 
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">
-                Add Product
-            </button>    
+        <div id="editForm" class="edit-form">
+            <h2>Edit Accessory</h2>
+            <label for="editName">Name:</label>
+            <input type="text" id="editName">
+            <label for="editDescription">Description:</label>
+            <textarea id="editDescription"></textarea>
+            <label for="editPrice">Price:</label>
+            <input type="number" id="editPrice" step="0.01">
+            <label for="editImage">Image URL:</label>
+            <input type="text" id="editImage">
+            <button id="saveEdit">Save</button>
+            <button id="cancelEdit">Cancel</button>
+        </div>
 
-                <!-- Modal -->
-            <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">
+            Add Product
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="addProductModalLabel">Add a New Product</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addProductModalLabel">Add a New Product</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Form inside the modal -->
+                        <form id="addProductForm">
+                            <div class="mb-3">
+                                <label for="newName" class="form-label">Product Name:</label>
+                                <input type="text" class="form-control" id="newName" placeholder="Product Name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="newImg" class="form-label">Image URL:</label>
+                                <input type="text" class="form-control" id="newImg" placeholder="Image URL">
+                            </div>
+                            <div class="mb-3">
+                                <label for="newDes" class="form-label">Product Description:</label>
+                                <input type="text" class="form-control" id="newDes" placeholder="Product Description">
+                            </div>
+                            <div class="mb-3">
+                                <label for="newPrice" class="form-label">Product Price:</label>
+                                <input type="number" class="form-control" id="newPrice" placeholder="Product Price">
+                            </div>
+                            <button type="button" class="btn btn-primary" id="addProductButton"
+                                data-bs-dismiss="modal">Add Product</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="modal-body">
-                <!-- Form inside the modal -->
-                <form id="addProductForm">
-                    <div class="mb-3">
-                    <label for="newName" class="form-label">Product Name:</label>
-                    <input type="text" class="form-control" id="newName" placeholder="Product Name">
-                    </div>
-                    <div class="mb-3">
-                    <label for="newImg" class="form-label">Image URL:</label>
-                    <input type="text" class="form-control" id="newImg" placeholder="Image URL">
-                    </div>
-                    <div class="mb-3">
-                    <label for="newDes" class="form-label">Product Description:</label>
-                    <input type="text" class="form-control" id="newDes" placeholder="Product Description">
-                    </div>
-                    <div class="mb-3">
-                    <label for="newPrice" class="form-label">Product Price:</label>
-                    <input type="number" class="form-control" id="newPrice" placeholder="Product Price">
-                    </div>
-                    <button type="button" class="btn btn-primary" id="addProductButton" data-bs-dismiss="modal">Add Product</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                </form>
-                </div>
-            </div>
             </div>
         </div>
-            
-            <div id="result"></div>
-            
-            <div id="spinner" class="spinner" style="display: none;">
-                <i class="fas fa-spinner fa-spin"></i>
-            </div>
-        
+
+        <div id="result"></div>
+
+        <div id="spinner" class="spinner" style="display: none;">
+            <i class="fas fa-spinner fa-spin"></i>
+        </div>
+
     </main>
 
     <footer>&copy; 2023 SHANK. All rights reseved.</footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
     <script src="/script/admin.js"></script>
 </body>
+
 </html>
