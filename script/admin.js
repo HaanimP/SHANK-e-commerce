@@ -183,9 +183,9 @@ document.getElementById('cancelEdit').addEventListener('click', function () {
     closeEditForm();
 });
 
+//function to add product
 document.addEventListener('DOMContentLoaded', function () {
     function addProduct() {
-        // ... (existing code)
 
         // Update storage and display
         store();
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
         closeAddProductModal();
     }
 
-    // Bind the addProduct function to a button or an event listener
+    // combine the addProduct function to a button or an event listener
     document.getElementById('addProductButton').addEventListener('click', addProduct);
 });
 
@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Bind the addProduct function to a button or an event listener
+    // combine the addProduct function to a button or an event listener
     document.getElementById('addProductButton').addEventListener('click', addProduct);
 });
 
@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Bind the addProduct function to a button or an event listener
+    // combine the addProduct function to a button or an event listener
     document.getElementById('addProductButton').addEventListener('click', addProduct);
 });
 
